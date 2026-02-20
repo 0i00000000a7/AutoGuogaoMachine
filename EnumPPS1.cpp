@@ -10,7 +10,7 @@ const int PRINT_THRESHOLD = ENUM_LAYERS - 15;
 PPSNotation smallest_nonterminate_seq;
 const vector<INT> known_smallest_seq =
 {
-    0,1,0,2,2,0,5,2,0,8,8,6,0,12,8,6,0,16,16,15,0,16,16,15,0,15,0,26,26,15,0,26,26,13,8,6,0,15,0,38,38,15,0,38,38,13,6,3
+    0,1,0,2,2,0,5,2,0,8,8,6,0,12,8,6,0,16,16,15,0,16,16,15,0,15,0,26,26,15,0,26,26,13,8,6,0,15,0,38,38,15,0,38,38,13,6,2,14
 };
 const int PARALLEL_DEPTH = 45;
 const int BASE_PREFIX_LEN = 35;
