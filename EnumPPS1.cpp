@@ -147,7 +147,7 @@ int main_enumpps1()
             }
         }
         
-        if (current_prefix.empty()) return;
+        if (current_prefix.empty()) return 0;
 
         PPSNotation tmp;
         tmp.seq = current_prefix;
