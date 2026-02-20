@@ -5,7 +5,7 @@ using namespace std;
 const int ENUM_LAYERS = 45;
 const int MAX_NONLOOP_LEN = ENUM_LAYERS / 4;
 const int CHECK_COPY_NUM=5;
-const int PRINT_THRESHOLD = ENUM_LAYERS - 10;
+const int PRINT_THRESHOLD = ENUM_LAYERS - 15;
 
 PPSNotation smallest_nonterminate_seq;
 const vector<INT> known_smallest_seq =
@@ -93,6 +93,14 @@ void enum_pps_recursive(vector<INT>& prev, PPSNotation& local_best)
 
     if (!pps._isSuccessor()) {
         check_loop_dif(pps.seq, local_best);
+    }
+
+    if (prev.size() <= PRINT_THRESHOLD) {
+        #pragma omp critical
+        {
+            pps.print(cout);
+            cout << endl;
+        }
     }
 
     if (prev.size() < ENUM_LAYERS) {
