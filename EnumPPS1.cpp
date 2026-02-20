@@ -91,14 +91,6 @@ void enum_pps_recursive(vector<INT>& prev, PPSNotation& local_best)
     bool is_standard = pps._checkStandardAndNonMaximum(res);
     if (!is_standard) return;
 
-    if (prev.size() <= PRINT_THRESHOLD) {
-        #pragma omp critical
-        {
-            pps.print(cout);
-            cout << endl;
-        }
-    }
-
     if (!pps._isSuccessor()) {
         check_loop_dif(pps.seq, local_best);
     }
