@@ -2,7 +2,7 @@
 #include "PPSNotation.h"
 #include <omp.h>
 using namespace std;
-const int ENUM_LAYERS = 55;
+const int ENUM_LAYERS = 65;
 const int MAX_NONLOOP_LEN = ENUM_LAYERS / 4;
 const int CHECK_COPY_NUM=5;
 const int PRINT_THRESHOLD = ENUM_LAYERS - 15;
@@ -10,10 +10,10 @@ const int PRINT_THRESHOLD = ENUM_LAYERS - 15;
 PPSNotation smallest_nonterminate_seq;
 const vector<INT> known_smallest_seq =
 {
-    0,1,0,2,2,0,5,2,0,8,8,6,0,12,8,6,0,16,16,15,0,16,16,15,0,15,0,26,26,15,0,26,26,13,8,6,0,15,0,38,38,15,0,38,38,13,6,2,14
+    0,1,0,2,2,0,5,2,0,8,8,6,0,12,8,6,0,16,16,15,0,16,16,15,0,15,0,26,26,15,0,26,26,13,8,6,0,15,0,38,38,15,0,38,38,13,6,2,0,8,6,0,51,51,50,0,51,51,50,0,50,0,61,61,50,0,61,61,0,6,0,70,8,6,0,74,74,73,0,74,74,73,0,73,0,84,84,73,0,84,84,71,8,6,0,73,0,96,96,73,0,96,96,71,6,0,105,105,0,108,108
 };
-const int PARALLEL_DEPTH = 45;
-const int BASE_PREFIX_LEN = 35;
+const int PARALLEL_DEPTH = 55;
+const int BASE_PREFIX_LEN = 45;
 
 void check_nonterminate_seq(const vector<INT>& seq, const vector<INT>& loop_dif, PPSNotation& local_best);
 void check_0nn(const vector<INT>& seq, PPSNotation& local_best);
