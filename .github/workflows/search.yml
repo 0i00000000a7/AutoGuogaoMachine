@@ -31,6 +31,7 @@ jobs:
           commit_if_changed() {
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
+            git pull --rebase
             git add pps_infinite.txt search.log
             # 如果有任何更改（包括新文件或修改），则提交
             if ! git diff --staged --quiet; then
