@@ -35,7 +35,7 @@ jobs:
             # 如果有任何更改（包括新文件或修改），则提交
             if ! git diff --staged --quiet; then
               git commit -m "Update results [skip ci]"
-              git stash pull
+              git stash
               git pull --rebase
               git stash pop
               git push
