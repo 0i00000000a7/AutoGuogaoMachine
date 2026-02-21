@@ -55,3 +55,12 @@ jobs:
           # 输出完整日志以便查看（可选）
           cat search.log
         shell: bash
+        
+      - name: Upload results artifact
+        if: always()   # 即使前面步骤失败也执行
+        uses: actions/upload-artifact@v4
+        with:
+          name: search-results
+          path: |
+            pps_infinite.txt
+            search.log
