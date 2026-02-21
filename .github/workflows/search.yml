@@ -31,11 +31,11 @@ jobs:
           commit_if_changed() {
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git pull --rebase
             git add pps_infinite.txt search.log
             # 如果有任何更改（包括新文件或修改），则提交
             if ! git diff --staged --quiet; then
               git commit -m "Update results [skip ci]"
+              git pull --rebase
               git push
             fi
           }
@@ -55,12 +55,3 @@ jobs:
           # 输出完整日志以便查看（可选）
           cat search.log
         shell: bash
-        
-      - name: Upload results artifact
-        if: always()   # 即使前面步骤失败也执行
-        uses: actions/upload-artifact@v4
-        with:
-          name: search-results
-          path: |
-            pps_infinite.txt
-            search.log
