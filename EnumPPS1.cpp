@@ -14,7 +14,7 @@ const vector<INT> known_smallest_seq =
     0,1,0,2,2
 };
 const int PARALLEL_DEPTH = ENUM_LAYERS - 20;
-const int BASE_PREFIX_LEN = 40;
+const int BASE_PREFIX_LEN = 4;
 
 void check_nonterminate_seq(const vector<INT>& seq, const vector<INT>& loop_dif, PPSNotation& local_best);
 void check_0nn(const vector<INT>& seq, PPSNotation& local_best);
