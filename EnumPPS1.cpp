@@ -5,7 +5,7 @@ using namespace std;
 const int ENUM_LAYERS = 50;
 const int MAX_NONLOOP_LEN = ENUM_LAYERS / 4;
 const int CHECK_COPY_NUM=5;
-const int PRINT_THRESHOLD = ENUM_LAYERS - 13;
+const int PRINT_THRESHOLD = ENUM_LAYERS - 17;
 
 PPSNotation smallest_nonterminate_seq;
 const vector<INT> known_smallest_seq =
