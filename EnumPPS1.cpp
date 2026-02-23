@@ -69,11 +69,12 @@ void check_nonterminate_seq(const vector<INT>& seq, const vector<INT>& loop_dif,
 
 void check_loop_dif(const vector<INT>& seq, PPSNotation& local_best)
 {
-    INT min_loop_len = max((INT)1, (INT)(seq.size() - MAX_NONLOOP_LEN));
-    for (int loop_len = min_loop_len; loop_len <= (int)seq.size(); loop_len++) {
-        vector<INT> loop_dif;
+    int candidates[] = { (int)seq.size() - 3, (int)seq.size() - 6 };
+    for (int loop_len : candidates) {
+        if (loop_len < 1 || loop_len > (int)seq.size()) continue; // 跳过不合法的
+        vector<INT> loop_dif(loop_len);
         for (int j = 0; j < loop_len; j++) {
-            loop_dif.push_back(seq[seq.size() - loop_len + j] > 0 ? loop_len : 0);
+            loop_dif[j] = seq[seq.size() - loop_len + j] > 0 ? loop_len : 0;
         }
         check_nonterminate_seq(seq, loop_dif, local_best);
     }
