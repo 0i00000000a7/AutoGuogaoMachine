@@ -2,7 +2,7 @@
 #include "PPSNotation.h"
 #include <omp.h>
 using namespace std;
-const int ENUM_LAYERS = 75;
+const int ENUM_LAYERS = 80;
 const int MAX_NONLOOP_LEN = ENUM_LAYERS / 4;
 const int CHECK_COPY_NUM=5;
 const int PRINT_THRESHOLD = ENUM_LAYERS - 13;
